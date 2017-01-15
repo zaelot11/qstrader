@@ -1,5 +1,8 @@
 import unittest
 
+import sys
+sys.path.append("/home/lukaspukas/Envs/qstraderp3/qstrader")
+
 from test_portfolio import PriceHandlerMock
 
 from qstrader import settings

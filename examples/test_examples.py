@@ -10,8 +10,6 @@ import os
 import math
 import unittest
 
-import sys
-sys.path.append("/home/lukaspukas/Envs/qstraderp3/qstrader")
 
 from qstrader import settings
 from qstrader.statistics import load

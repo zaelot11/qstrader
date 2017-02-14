@@ -3,6 +3,7 @@ import time
 import warnings
 import yaml
 from munch import munchify, unmunchify
+import pdb
 
 
 ENV_VAR_ROOT = 'QSTRADER'
@@ -24,19 +25,19 @@ def from_env(key, default_value=None, root=ENV_VAR_ROOT):
             return(default_value)
     else:
         return(default_value)
-
+pdb.set_trace()
 
 DEFAULT = munchify({
-    "CSV_DATA_DIR": from_env("CSV_DATA_DIR", "~/data"),
-    "OUTPUT_DIR": from_env("OUTPUT_DIR", "~/out")
+    "CSV_DATA_DIR": from_env("CSV_DATA_DIR", "/home/lukaspukas/Envs/qstraderp3/qstrader/data"),
+    "OUTPUT_DIR": from_env("OUTPUT_DIR", "/home/lukaspukas/Envs/qstraderp3/qstrader/out")
 })
-
+#pdb.set_trace()
 
 TEST = munchify({
-    "CSV_DATA_DIR": "data",
-    "OUTPUT_DIR": "out"
+    "CSV_DATA_DIR": from_env("CSV_DATA_DIR", "/home/lukaspukas/Envs/qstraderp3/qstrader/data"),
+    "OUTPUT_DIR": from_env("OUTPUT_DIR", "/home/lukaspukas/Envs/qstraderp3/qstrader/out")
 })
-
+#pdb.set_trace()
 
 def from_file(fname=DEFAULT_CONFIG_FILENAME, testing=False):
     if testing:
